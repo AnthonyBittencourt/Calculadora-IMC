@@ -23,10 +23,12 @@ def fcalcularIMC():
         l_resultado.config(text="Peso normal")
     elif 25 <= imc <= 29.9:
         l_resultado.config(text="Sobrepeso")
+    elif 30<= imc <=34.9:
+        l_resultado.config(text="Obesidade grau-1")
+    elif 35<= imc <= 39.9:
+        l_resultado.config(text='Obesidade grau-2')
     else:
-        l_resultado.config(text="Obesidade")
-
-
+        l_resultado.config(text='Obesidade grau-3')
 
 
 janela = Tk()
@@ -40,28 +42,23 @@ style.theme_use("clam")
 
 frame_cima = Frame(janela, width=400, height=50, bg=coRpreto, relief='flat')
 frame_cima.grid(row=0, column=0, pady=1, padx=0, sticky=NSEW)
-
 frame_baixo = Frame(janela, width=400, height=350, bg=coRcinza, relief="flat")
 frame_baixo.grid(row=1, column=0, pady=1, padx=0, sticky=NSEW)
 
 l_calcIMC = Label(frame_cima, text='Calculadora IMC', height=1, anchor=N, font=('Ivy 20 bold'),bg=coRpreto, fg=coRamarelo)
 l_calcIMC.place(x=90, y=5)
 
-
 l_linha = Label(frame_cima, text='', height=1, width=200, anchor=NE, font=('Ivy 5'), bg=coRamarelo)
 l_linha.place(x=0, y=45)
 
-
 l_altura = Label(frame_baixo, text="Altura (m):", height=1, anchor=NW, font=("Ivy 12 bold"),bg=coRcinza, fg=coRbranco)
 l_altura.place(x=15, y=20)
-
 e_altura = Entry(frame_baixo, width=4, justify='left', font=("", 30),highlightbackground=coRpreto, relief="solid")
 e_altura.place(x=14, y=45)
 
 
 l_peso = Label(frame_baixo, text="Peso (kg):", height=1, anchor=NW, font=("Ivy 12 bold"), bg=coRcinza, fg=coRbranco)
 l_peso.place(x=15, y=110)
-
 e_peso = Entry(frame_baixo, width=4, justify='left', font=("", 30),highlightbackground=coRpreto, relief="solid")
 e_peso.place(x=14, y=135)
 
@@ -80,12 +77,11 @@ caixa_resultado.place(x=240, y=45)
 linha_meio = Label(frame_baixo, text='', height=100, font=('Ivy 1'), bg=coRcinza, relief=RIDGE)
 linha_meio.place(x=190, y=11)
 
-
 l_resultado = Label(frame_baixo, text="", height=1, anchor=NW, font=("Ivy 12 bold"),justify='center', bg=coRcinza, fg=coRpreto,highlightbackground=coRpreto, relief='solid')
 l_resultado.place(x=250, y=120)
 
 
 caixa_resultado1 = Label(frame_baixo, text='', height=2, width=5, anchor=NW, font=('Ivy 15'), bg=coRamarelo2)
-caixa_resultado1.place(x=290, y=60)
+caixa_resultado1.place(x=290, y=61)
 
 janela.mainloop()
